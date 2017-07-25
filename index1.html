@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>VENTA DE PASAJES</title>
-	<link rel="stylesheet" href="main.css">
+	
 </head>
-<body>
+<center>
+<body style="background-color: #FA61E8">
 	<center><h1>VENTA DE PASAJES</h1></center>
 	<hr width="75%" size="2" color="black"/><br>
 	<table border=4>
@@ -62,21 +63,23 @@
 	<section>
 		 <label>DNI</label>
          <input type="number" id="nro_dni">
-         <button onclick="buscar()">Buscar</button>
+         <button onclick="buscar()">Buscar</button><br><br>
 	</section>
 	<section>
 		<label>NOMBRE</label>
-        <input type="text" id="name"><br>
+        <input type="text" id="name"><br><br>
     	<label>APELLIDOS</label>
-        <input type="text" id="last_name"><br>
+        <input type="text" id="last_name"><br><br>
 		<label>DNI</label>
-        <input type="text" id="dni"><br>
+        <input type="text" id="dni"><br><br>
         <button id="reservar" onclick="reservar()">Reservar</button>
 		<button id="cancelar" onclick="cancelar()">Cancelar</button>
+		<button id="listar" onclick="listar()">Listar</button>
 	</section>	
 	<div id="mostrar"></div>
 	<div id="mostrarBuscar"></div>
-	<div id="listar"></div>
-	<script src="index1.js"></script>
+	<div id="listarDiv"></div>
+	<script src="js/index1.js"></script>
 </body>
+</center>
 </html>

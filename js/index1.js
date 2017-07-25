@@ -23,8 +23,7 @@ function reservar()
 	var nombre = document.getElementById("name").value;
 	var lastname = document.getElementById("last_name").value;
 	var dni = document.getElementById("dni").value;
-	//var guardar=document.getElementById("reservar");	
-	//numAsiento = 
+
 	pasajero = 
 	{
 		nombre : nombre,
@@ -33,7 +32,7 @@ function reservar()
 	}
 	pasajeros[asientoSelect-1] = pasajero;
 	console.log(pasajeros);
-	//guardar.innerHTML += <h3>"<center><div><p>Nombre: "+nombre+"</p></div><p>Apellido :"+last_name+"</p><p>Dni :"+dni+"</p></center>";
+	
 	alert("Asiento reservado");
 	
 	for(var i=0; i<nroAsientos.length; i++)
@@ -64,9 +63,46 @@ function buscar(ingreso)
   		{
   			if(ingreso==pasajeros[i].dni)
   			{
-    			mostrarBuscar.innerHTML="<h1> Asiento Reservado:</h1>" + "Numero de Asiento: " + nroAsientos + " Nombre: " + pasajeros[i].nombre + "Apellidos: " + pasajeros[i].apellido + "Dni: " + pasajeros[i].dni;
+    			mostrarBuscar.innerHTML="<h1> Asiento Reservado:</h1>" + "Numero de Asiento: " + parseInt(asientoSelect) + " Nombre: " + pasajeros[i].nombre + " Apellidos: " + pasajeros[i].apellido + " Dni: " + pasajeros[i].dni;
   				console.log("Nombre: " + pasajeros[i].nombre + "Apellidos: " + pasajeros[i].apellido + "Dni: " + pasajeros[i].dni);
   			}	
   		}
   	}
+}
+function listar()
+{
+	var listarDiv=document.getElementById("listarDiv");
+	for(var i=0; i<pasajeros.length;i++)
+  	{
+  		if(pasajeros[i]!=undefined)
+  		{
+  			listarDiv.innerHTML +="<h1> Asiento Reservado:</h1>" + "Numero de Asiento: " + parseInt(asientoSelect) + " Nombre: " + pasajeros[i].nombre + " Apellidos: " + pasajeros[i].apellido + " Dni: " + pasajeros[i].dni;
+  			console.log("Nombre: " + pasajeros[i].nombre + "Apellidos: " + pasajeros[i].apellido + "Dni: " + pasajeros[i].dni);
+   		}
+  	}
+}
+function cancelar(event)
+{
+	/*var nombre = document.getElementById("name").value;
+	var lastname = document.getElementById("last_name").value;
+	var dni = document.getElementById("dni").value;
+
+	pasajero = 
+	{
+		nombre : nombre,
+		apellido : lastname,
+		dni : dni
+	}*/
+	pasajeros[asientoSelect-1] = undefined;
+	console.log(pasajeros);
+	
+	alert("Pasaje cancelado!!");
+	
+	for(var i=0; i<nroAsientos.length; i++)
+	{
+		if(nroAsientos[i].textContent==asientoSelect)
+		{
+			nroAsientos[i].style.backgroundColor = 'transparent';
+		}
+	}  					  				  	
 }
